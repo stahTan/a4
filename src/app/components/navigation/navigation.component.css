@@ -1,0 +1,24 @@
+div{
+    text-align: center;
+    background:darkslateblue;
+}
+ul{
+    list-style-type:none;
+    
+}
+li{
+    display:inline;
+    margin-right:20px;
+    
+}
+img{
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    width: 50%;
+}
+a{
+    color:#4ed3fc;
+    font-weight:bold;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
