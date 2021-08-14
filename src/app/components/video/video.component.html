@@ -1,12 +1,19 @@
-<div class="columm">
-    <img src="">
+<div class="column">
+    <img src= "{{oneVideo.thumbnail_360_url}}" class="thumb">
     <div class="row">
-        <h4><a href="#">{{ title }}</a></h4>
-        <img src="">
-        <p>{{userName}}</p>
-        <p>{{dateCreated}}</p>
-        <p>{{viewCount}}</p>
-        <button ngIf>Add to playlist</button>
-
+        <h4><a href="https://www.dailymotion.com/video/{{oneVideo.id}}" target="_blank">{{oneVideo.title}}</a></h4>
+        <div class="column">
+            <div class="row">
+                <img src='{{oneVideo["owner.avatar_80_url"]}}' class="pfp">
+                <p>{{oneVideo["owner.username"]}}</p>
+                <button (click)="addToPlaylist()" [disabled]="(inPlaylist)"
+                [ngStyle]="{visibility: toHide()}">Add to playlist</button>
+            </div>
+            <div class="row">
+                <p>Publish date: {{oneVideo.created_time * 1000 | date}}</p>
+                <p>View count: {{oneVideo.views_total}}</p>
+            </div>
+        </div>
     </div>
 </div>
+

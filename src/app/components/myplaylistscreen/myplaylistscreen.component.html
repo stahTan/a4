@@ -1,1 +1,10 @@
-<app-listing></app-listing>
+<button (click)="clearPlaylist()">Clear Playlist</button>
+<div *ngIf="(noVideo) else hasVideo">
+    <p>There are no videos in your playlist.</p>
+</div> 
+
+<ng-template #hasVideo>
+    <div>
+        <app-listing [videoList] = "currPlayList"></app-listing>
+    </div>
+</ng-template>

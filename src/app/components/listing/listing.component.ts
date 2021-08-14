@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+
 import Video from 'src/app/Models/video';
 
 @Component({
@@ -8,7 +9,7 @@ import Video from 'src/app/Models/video';
 })
 export class ListingComponent implements OnInit {
 
-  videoList:Video[] = [] //needs to store either videos from search or playlist
+  @Input() videoList:Video[] = [] //needs to store either videos from search or playlist
   constructor() { }
   
   ngOnInit(): void {

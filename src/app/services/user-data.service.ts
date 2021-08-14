@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import Video from '../Models/video';
 
 @Injectable({
@@ -6,24 +7,32 @@ import Video from '../Models/video';
 })
 export class UserDataService {
   //store video in user's playlist
-  videoData:Video = {} as Video
-  videoList:Video[] = []
-  
-  //add video to user's playlist
-  setVideo = (video:Video) => {
-    this.videoData = video
-  }
-  //retrieve all videos in user's playlist
 
-  getVideo = ():Video =>{
-    return this.videoData
+  private playList:Video[] = []
 
-  }
-  addVideo = (video:Video) => {
-    this.videoList.push(video)
-  }
-  getVideoList = ():Video[] => {
-    return this.videoList
-  }
+  //observable
+  playListObservable = new BehaviorSubject<Video[]>([])
+
   constructor() { }
+
+
+  //add video to user's playlist
+  addVideo = (video:Video) => {
+    this.playList.push(video)
+    this.playListObservable.next(this.playList)
+    console.log(this.playListObservable)
+  }
+
+  //retrieve all videos in user's playlist
+  getPlaylist = () => {
+    console.log(this.playList)
+    return this.playList
+  }
+
+  //clear playlist
+  clearAll = () => {
+    this.playList = []
+    this.playListObservable.next(this.playList)
+  }
+  
 }

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import Video from 'src/app/Models/video';
 import { UserDataService } from 'src/app/services/user-data.service';
 
@@ -14,8 +15,9 @@ export class VideoComponent implements OnInit {
   @Input() oneVideo:Video = {} as Video
   inPlaylist:boolean = false
 
-  constructor(private userService:UserDataService) { }
+  constructor(private userService:UserDataService, public router:Router) { }
 
+  
   ngOnInit(): void {
     this.userService.playListObservable.subscribe((updatedTeamList)=>{
       if(updatedTeamList.length === 0){
@@ -24,6 +26,12 @@ export class VideoComponent implements OnInit {
     })
   }
   
+  toHide = () =>{
+    if(this.router.url ==="/home"){
+      return "visible"
+    }
+    return "hidden"
+  }
   addToPlaylist = () =>{
     this.userService.addVideo(this.oneVideo)
     this.inPlaylist = true
