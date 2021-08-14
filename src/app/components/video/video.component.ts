@@ -14,6 +14,7 @@ export class VideoComponent implements OnInit {
   //properties
   @Input() oneVideo:Video = {} as Video
   inPlaylist:boolean = false
+  btnText:string = "Add to playlist"
 
   constructor(private userService:UserDataService, public router:Router) { }
 
@@ -33,6 +34,7 @@ export class VideoComponent implements OnInit {
     return "visible"
   }
   addToPlaylist = () =>{
+    this.btnText = "Already Added"
     this.userService.addVideo(this.oneVideo)
     this.inPlaylist = true
   }

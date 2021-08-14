@@ -8,7 +8,7 @@
                 <img src='{{oneVideo["owner.avatar_80_url"]}}' class="pfp">
                 <p>{{oneVideo["owner.username"]}}</p>
                 <button (click)="addToPlaylist()" [disabled]="(inPlaylist)"
-                [ngStyle]="{visibility: toHide()}">Add to playlist</button>
+                [ngStyle]="{visibility: toHide()}">{{btnText}}</button>
             </div>
             <div class="row">
                 <p>Publish date: {{oneVideo.created_time * 1000 | date}}</p>
