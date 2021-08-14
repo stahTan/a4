@@ -1,7 +1,11 @@
-<button (click)="clearPlaylist()">Clear Playlist</button>
+
+<div class="btn">
+    <button (click)="clearPlaylist()">Clear Playlist</button>
+</div>
+
 <div *ngIf="(noVideo) else hasVideo">
     <p>There are no videos in your playlist.</p>
-</div> 
+</div>
 
 <ng-template #hasVideo>
     <div>

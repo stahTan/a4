@@ -1,0 +1,15 @@
+body.container{
+    background-color: rgb(103, 107, 134);
+}
+div.btn{
+    position:relative;
+    left:45%;
+}
+
+p{
+    text-align: center;
+    font-weight: bold;
+    color: rgb(52, 167, 202);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+    

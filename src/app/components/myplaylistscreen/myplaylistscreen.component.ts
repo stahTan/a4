@@ -26,8 +26,8 @@ export class MyplaylistscreenComponent implements OnInit {
   //after component loads, get data from service
 
   ngOnInit(): void {
-    this.currPlayList = this.userService.getPlaylist()
-    console.log(this.currPlayList)
+    //this.currPlayList = this.userService.getPlaylist()
+    
     this.playListSubscription = this.userService.playListObservable.subscribe(
       (dataFromObservable)=>{
         this.currPlayList = dataFromObservable

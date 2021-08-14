@@ -1,4 +1,5 @@
-<input type="search" placeholder="Enter search words" #words>
-<button (click)="getWords(words.value)">Search video</button>
-<app-listing [videoList]="searchList"></app-listing>
-
+<div class="btn">
+    <input type="search" placeholder="Enter search words" #words>
+    <button (click)="getWords(words.value)">Search video</button>
+    <app-listing [videoList]="searchList"></app-listing>
+</div>

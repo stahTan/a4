@@ -8,7 +8,7 @@ import Video from '../Models/video';
 export class UserDataService {
   //store video in user's playlist
 
-  private playList:Video[] = []
+  playList:Video[] = []
 
   //observable
   playListObservable = new BehaviorSubject<Video[]>([])
@@ -20,12 +20,11 @@ export class UserDataService {
   addVideo = (video:Video) => {
     this.playList.push(video)
     this.playListObservable.next(this.playList)
-    console.log(this.playListObservable)
+    
   }
 
   //retrieve all videos in user's playlist
   getPlaylist = () => {
-    console.log(this.playList)
     return this.playList
   }
 
