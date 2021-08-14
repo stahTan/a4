@@ -1,5 +1,5 @@
 <div class="btn">
-    <input type="search" placeholder="Enter search words" #words>
+    <input type="search" placeholder="Enter search words" #words size="40">
     <button (click)="getWords(words.value)">Search video</button>
 </div>
 <app-listing [videoList]="searchList"></app-listing>
