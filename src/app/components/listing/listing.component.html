@@ -1,3 +1,3 @@
-<div>
-    <app-video *ngFor></app-video>
+<div> <!-- ngIf and ng-template to make distinction?-->
+    <app-video *ngFor ="let v of videoList" [oneVideo]="v"></app-video>
 </div>
