@@ -27,10 +27,10 @@ export class VideoComponent implements OnInit {
   }
   
   toHide = () =>{
-    if(this.router.url ==="/home"){
-      return "visible"
+    if(this.router.url ==="/playlist"){
+      return "hidden"
     }
-    return "hidden"
+    return "visible"
   }
   addToPlaylist = () =>{
     this.userService.addVideo(this.oneVideo)
